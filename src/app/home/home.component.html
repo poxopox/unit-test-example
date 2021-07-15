@@ -1,0 +1,116 @@
+<mat-card class="unit-test--card">
+  <mat-card-header class="unit-test-card--header">
+    <mat-card-title class="title">Form Groups</mat-card-title>
+    <mat-card-subtitle class="subtitle"
+      >Tests based around Angular FormGroups</mat-card-subtitle
+    >
+  </mat-card-header>
+  <mat-card-content class="unit-test--card--content">
+    <form class="form form-column" [formGroup]="appFormGroup">
+      <!--Name-->
+      <mat-form-field>
+        <label>
+          <input
+            matInput
+            formControlName="name"
+            type="text"
+            required
+            placeholder="Name"
+          />
+        </label>
+      </mat-form-field>
+      <!--Age-->
+      <mat-form-field>
+        <label>
+          <input
+            matInput
+            formControlName="age"
+            type="number"
+            required
+            placeholder="Age"
+          />
+        </label>
+      </mat-form-field>
+      <!--      Height-->
+      <div class="form form-row" [formGroup]="heightFormGroup">
+        <mat-form-field>
+          <label>
+            <input
+              formControlName="feet"
+              matInput
+              type="number"
+              required
+              placeholder="Feet"
+            />
+          </label>
+        </mat-form-field>
+        <mat-form-field>
+          <label>
+            <input
+              formControlName="inches"
+              matInput
+              type="number"
+              required
+              placeholder="Inches"
+            />
+          </label>
+        </mat-form-field>
+      </div>
+
+      <mat-form-field>
+        <label>
+          <input
+            formControlName="maxGCount"
+            matInput
+            type="number"
+            required
+            placeholder="Max G Count"
+          />
+        </label>
+      </mat-form-field>
+
+      <div
+        class="form form-column"
+        *ngIf="appFormGroup.get('maxGCount').value > 10"
+      >
+        Percent of Brain Damage
+        <div class="percent-display">
+          <span class="value">{{ slider.value }}</span
+          ><span class="percent-sign">%</span>
+        </div>
+
+        <mat-slider
+          #slider
+          formControlName="percentOfBrainDamage"
+          thumbLabel
+          [displayWith]="thumbDisplay"
+          tickInterval="1000"
+          min="0"
+          max="100"
+          step="0.5"
+        ></mat-slider>
+      </div>
+
+      <mat-form-field>
+        <label>
+          <input
+            matInput
+            type="Number"
+            required
+            placeholder="Num. Space Missions"
+          />
+        </label>
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+  <mat-card-actions align="start">
+    <button
+      mat-raised-button
+      color="primary"
+      class="unit-test--actions--send-button"
+    >
+      Send
+    </button>
+    <button mat-stroked-button>Reset</button>
+  </mat-card-actions>
+</mat-card>

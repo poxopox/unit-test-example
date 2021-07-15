@@ -1,0 +1,16 @@
+@import './scss/theme';
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+$primary-palette: mat-palette($md-unittestpalette0);
+$secondary-palette: mat-palette($md-unittestpalette1);
+$warning-palette: mat-palette($md-unittestpalette2);
+$dark-theme: mat-dark-theme($primary-palette, $secondary-palette, $warning-palette);
+$custom-typography: mat-typography-config(
+  $font-family: '\'Space Mono\', monospace',
+  $headline: mat-typography-level(32px, 48px, 700),
+  $body-1: mat-typography-level(16px, 24px, 500)
+);
+@include angular-material-theme($dark-theme);
+@include angular-material-typography($custom-typography);
