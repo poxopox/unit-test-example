@@ -21,8 +21,13 @@ describe('Height Validator', () => {
     });
   });
 
-  it('should return an error object if the input parameters are exceeded', () => {
-    formGroup.setValue({ feet: 2, inches: 2 });
+  it('should return an error object if just the feet unit is exceeded', () => {
+    formGroup.setValue({ feet: 2, inches: 0 });
+    expect(heightValidator(1, 1)(formGroup)).toEqual({ tooTall: true });
+  });
+
+  it('should return an error object if just the feet unit is the same but the inches are exceeded', () => {
+    formGroup.setValue({ feet: 1, inches: 2 });
     expect(heightValidator(1, 1)(formGroup)).toEqual({ tooTall: true });
   });
 
