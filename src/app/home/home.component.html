@@ -1,116 +1,62 @@
-<mat-card class="unit-test--card">
-  <mat-card-header class="unit-test-card--header">
-    <mat-card-title class="title">Form Groups</mat-card-title>
-    <mat-card-subtitle class="subtitle"
-      >Tests based around Angular FormGroups</mat-card-subtitle
-    >
-  </mat-card-header>
-  <mat-card-content class="unit-test--card--content">
-    <form class="form form-column" [formGroup]="appFormGroup">
-      <!--Name-->
-      <mat-form-field>
-        <label>
-          <input
-            matInput
-            formControlName="name"
-            type="text"
-            required
-            placeholder="Name"
-          />
-        </label>
-      </mat-form-field>
-      <!--Age-->
-      <mat-form-field>
-        <label>
-          <input
-            matInput
-            formControlName="age"
-            type="number"
-            required
-            placeholder="Age"
-          />
-        </label>
-      </mat-form-field>
-      <!--      Height-->
-      <div class="form form-row" [formGroup]="heightFormGroup">
-        <mat-form-field>
-          <label>
-            <input
-              formControlName="feet"
-              matInput
-              type="number"
-              required
-              placeholder="Feet"
-            />
-          </label>
-        </mat-form-field>
-        <mat-form-field>
-          <label>
-            <input
-              formControlName="inches"
-              matInput
-              type="number"
-              required
-              placeholder="Inches"
-            />
-          </label>
-        </mat-form-field>
-      </div>
 
-      <mat-form-field>
-        <label>
-          <input
-            formControlName="maxGCount"
-            matInput
-            type="number"
-            required
-            placeholder="Max G Count"
-          />
-        </label>
-      </mat-form-field>
+<div class="showcase">
 
-      <div
-        class="form form-column"
-        *ngIf="appFormGroup.get('maxGCount').value > 10"
+  <mat-card style="width: 2000px;" class="unit-test--card">
+    <mat-card-header>
+      <mat-card-title class="title">Unit Test Examples</mat-card-title>
+      <mat-card-subtitle class="subtitle">A variety pack of Unit Test demos</mat-card-subtitle>
+    </mat-card-header>
+  </mat-card>
+</div>
+
+
+<div class="showcase">
+  <app-reactive-forms-demo> </app-reactive-forms-demo>
+  <mat-card class="unit-test--description">
+    <mat-card-header>
+      <mat-card-subtitle class="subtitle">
+        Unit Testing is a way to document complex form logic</mat-card-subtitle
       >
-        Percent of Brain Damage
-        <div class="percent-display">
-          <span class="value">{{ slider.value }}</span
-          ><span class="percent-sign">%</span>
-        </div>
-
-        <mat-slider
-          #slider
-          formControlName="percentOfBrainDamage"
-          thumbLabel
-          [displayWith]="thumbDisplay"
-          tickInterval="1000"
-          min="0"
-          max="100"
-          step="0.5"
-        ></mat-slider>
-      </div>
-
-      <mat-form-field>
-        <label>
-          <input
-            matInput
-            type="Number"
-            required
-            placeholder="Num. Space Missions"
-          />
-        </label>
-      </mat-form-field>
-    </form>
-  </mat-card-content>
-  <mat-card-actions align="start">
-    <button
-      mat-raised-button
-      color="primary"
-      class="unit-test--actions--send-button"
+    </mat-card-header>
+    <mat-card-content>
+      <p style="text-indent: 20px">
+        When looking up on how to use ReactiveForms in Angular, you usually come
+        across some pretty simple examples. Essentially little more than how to
+        hookup up the values to FormControls, configure in validators and maybe
+        on how to use FormArrays and nested FormGroups.
+      </p>
+      <p style="text-indent: 20px">
+        But what about complex forms that have dynamic fields that are shown
+        depending on form state? There can also be dynamic forms within
+        FormArrays as well making the matter of controlling the application
+        state reliably more difficult.
+      </p>
+      <p style="text-indent: 20px">
+        After development is completed on a complex form, the logic imprinted
+        into the code is far from self-documenting. Without some strategy for
+        documenting code, a developers ability to navigate and understand and
+        code quickly after some time is diminished.
+      </p>
+      <br />
+      <p style="text-indent: 20px">Unit Testing serves a dual purpose.</p>
+      <p style="text-indent: 20px">
+        First, it provides a means of documentation within the code base so
+        developers aren't context switching to external documentation like JIRA
+        Stories, Confluence, Microsoft Office Products, etc...
+      </p>
+      <p style="text-indent: 20px">
+        Second, <i>It tests the form logic...</i> †A product of these tests are
+        reports that ensure what was in the requirements is actually functioning
+        as intended.
+      </p>
+    </mat-card-content>
+    <mat-card-footer style="text-indent: 20px; font-size: 12px"
+      >†
+      <i
+        >Reports are only as good as the tests they are reporting. Without well
+        though out and well written tests, reports are just pretty colors and
+        jargon.</i
+      ></mat-card-footer
     >
-      Send
-    </button>
-    <button mat-stroked-button>Reset</button>
-  </mat-card-actions>
-</mat-card>
+  </mat-card>
+</div>

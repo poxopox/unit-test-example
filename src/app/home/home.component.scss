@@ -1,57 +1,18 @@
-:host {
-  margin: 16px;
-}
+.showcase {
+  font-family: 'Space Mono', monospace;
+  color: white;
+  border-radius: 13px;
 
-.unit-test {
-  &--card {
-    font-family: 'Space Mono', monospace;
-    margin: 8px;
-    padding: 16px;
-    & .title {
-      font-size: 64px;
-      letter-spacing: 8px;
-    }
-    & .subtitle {
-      font-family: 'Flamenco', cursive;
-      font-size: 32px;
-      font-style: italic;
-      font-weight: 400;
-    }
-
-    .form {
-      padding: 16px;
-      margin: 16px;
-      display: flex;
-      &.form-column {
-        flex-direction: column;
-        @media (max-width: 700px) {
-          flex-direction: row;
-        }
-      }
-
-      &.form-row {
-        border: #287c46 1px dashed;
-        padding: 18px;
-        & > mat-form-field {
-          margin-left: 16px;
-        }
-      }
-    }
-
-    &--actions {
-      &send-button {
-        background-color: #287c46;
-      }
-    }
-  }
-}
-
-.percent-display {
-  font-size: 64px;
-  background-color: #3f3f3f;
+  padding: 16px;
   display: flex;
-  font-style: normal;
-  font-weight: 400;
+  flex-direction: row;
   justify-content: center;
-  width: 200px;
+  &.reverse {
+    flex-direction: row-reverse;
+  }
+
+  & > .inset {
+    background: #3f3f3f;
+    box-shadow: 0 0 0 #3f3f3f;
+  }
 }

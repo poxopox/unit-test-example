@@ -1,11 +1,30 @@
-import {async, TestBed} from '@angular/core/testing';
-import {AppComponent} from './app.component';
+import { async, TestBed } from '@angular/core/testing';
+import { AppComponent } from './app.component';
+import { BrowserModule } from '@angular/platform-browser';
+import {
+  MatButtonModule,
+  MatCardModule,
+  MatInputModule,
+  MatSliderModule,
+  MatToolbarModule,
+} from '@angular/material';
+import { ReactiveFormsModule } from '@angular/forms';
+import { AppRoutingModule } from './app-routing.module';
+import { NoopAnimationPlayer } from '@angular/animations';
+import {HomeComponent} from './home/home.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        AppComponent
+      declarations: [AppComponent, HomeComponent],
+      imports: [
+        MatCardModule,
+        MatButtonModule,
+        ReactiveFormsModule,
+        AppRoutingModule,
+        MatToolbarModule,
+        MatInputModule,
+        MatSliderModule,
       ],
     }).compileComponents();
   }));
@@ -14,18 +33,5 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
-  });
-
-  it(`should have as title 'unit-testing-example'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('unit-testing-example');
-  });
-
-  it('should render title in a h1 tag', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to unit-testing-example!');
   });
 });

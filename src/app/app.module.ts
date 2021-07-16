@@ -7,11 +7,13 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {AppRoutingModule} from './app-routing.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HomeComponent} from './home/home.component';
+import { ReactiveFormsDemoComponent } from './home/reactive-forms-demo/reactive-forms-demo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    ReactiveFormsDemoComponent
   ],
   imports: [
     BrowserModule,
