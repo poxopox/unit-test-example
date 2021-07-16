@@ -11,12 +11,14 @@ import {
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { NoopAnimationPlayer } from '@angular/animations';
-import {HomeComponent} from './home/home.component';
+import { HomeComponent } from './home/home.component';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { ReactiveFormsDemoComponent } from './home/reactive-forms-demo/reactive-forms-demo.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [AppComponent, HomeComponent],
+      declarations: [AppComponent, HomeComponent, ReactiveFormsDemoComponent],
       imports: [
         MatCardModule,
         MatButtonModule,
@@ -25,7 +27,7 @@ describe('AppComponent', () => {
         MatToolbarModule,
         MatInputModule,
         MatSliderModule,
-      ],
+      ]
     }).compileComponents();
   }));
 

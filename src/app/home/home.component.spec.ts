@@ -12,6 +12,7 @@ import {
 import {RouterTestingModule} from '@angular/router/testing';
 import {ReactiveFormsModule} from '@angular/forms';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
+import {ReactiveFormsDemoComponent} from './reactive-forms-demo/reactive-forms-demo.component';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -29,7 +30,7 @@ describe('HomeComponent', () => {
         MatInputModule,
         NoopAnimationsModule,
       ],
-      declarations: [HomeComponent],
+      declarations: [HomeComponent, ReactiveFormsDemoComponent],
     }).compileComponents();
   }));
 
