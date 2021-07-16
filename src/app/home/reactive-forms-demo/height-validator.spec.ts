@@ -2,7 +2,11 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { heightValidator } from './height-validator';
 
 /**
- * Unit testing doesn't have to be complicated with Angular Components!
+ * Unit testing doesn't have to be complicated!
+ *
+ * Testing Angular components  can be tricky because of dependencies and change detection.
+ *
+ * If you use pure typescript functions and modules, you need not to worry about test harnessing.
  *
  * Form Validators are the perfect candidates for unit testing
  * since they only require an AbstractFormControl to test and don't need change detection.
