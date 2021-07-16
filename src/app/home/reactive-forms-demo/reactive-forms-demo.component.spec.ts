@@ -29,4 +29,9 @@ describe('ReactiveFormsDemoComponent', () => {
     fixture.detectChanges();
     expect(component.heightFormGroup.errors).toEqual({ tooTall: true });
   });
+
+  it('should have a method that allows the display of percent values', function () {
+    expect(component.thumbDisplay(2)).toEqual('2%');
+    expect(component.thumbDisplay(2.5)).toEqual('2.5%');
+  });
 });

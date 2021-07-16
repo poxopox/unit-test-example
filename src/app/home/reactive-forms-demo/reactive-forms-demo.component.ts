@@ -35,7 +35,7 @@ export class ReactiveFormsDemoComponent implements OnInit {
     return `${value}%`;
   }
   get heightFormGroup(): FormGroup {
-    return (this.appFormGroup.get('height') as FormGroup) || null;
+    return this.appFormGroup.get('height') as FormGroup;
   }
 
   constructor() {}
